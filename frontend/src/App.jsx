@@ -1,10 +1,16 @@
-import CardUser from './components/CardUser'
+import ChatPage from './pages/ChatPage';
+import CardUser from './components/CardUser';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 const App = () => {
   return (
     <>
-      <div className="p-24">
-        <CardUser/>
-      </div>
+      <Router>
+        <Routes>
+          <Route path='/' element={<CardUser />} />
+          <Route path='/chat/' element={<ChatPage />} />
+        </Routes>
+      </Router>
     </>
   );
 };
